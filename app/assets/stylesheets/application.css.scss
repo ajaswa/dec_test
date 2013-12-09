@@ -1,0 +1,189 @@
+@mixin transition( $args: all .6s linear ) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+$wi-width: 960px;
+$wi-cols: 12;
+$wi-gutter: 20px;
+$wi-stacked-width: 90%;
+$wi-stacked-breakpoint: 650px;
+$wi-responsive: true;
+
+@import 'waffleiron';
+@import 'fonts';
+
+%col-4 {
+  @include col(4);
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font:13px/1.231 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  *font-size:small;
+  *font:x-small;
+  background-color:#fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  @include transition( color .6s linear );
+  color: #b05818;
+  &:hover {
+    color: #2f2116;
+  }
+}
+
+header,
+footer,
+section {
+  @include row();
+}
+
+#logo {
+  @extend %col-4;
+  text-align: center;
+  a {
+    display: inline-block;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+#nav {
+  @include col(7);
+  vertical-align: bottom;
+  margin-bottom: 20px;
+  li {
+    width: 20%;
+    display: inline-block;
+    /* height: 20px; */
+    border: 1px solid #70b0ba;
+    text-align: center;
+    font-size: 16px;
+    a {
+      background-color: #30211a;
+      color: #70b0ba;
+      display: block;
+      text-decoration: none;
+      height: 100%;
+      width: 100%;
+      padding: 15px 0;
+      &:hover {
+        color: #b05818;
+      }
+    }
+  }
+}
+ul.social {
+  @include col(1);
+  text-align: center;
+  margin-bottom: 20px;
+  li {
+    display: inline-block;
+    font-size: 40px;
+    a {
+      text-decoration: none;
+      color: #8cbbc3;
+      &:hover {
+        color: #507d84;
+      }
+      &:before {
+        font-family: 'socialicoregular';
+      }
+    }
+    &.twitter a:before {
+      content: 'l';
+    }
+    &.facebook a:before {
+      content: 'f';
+    }
+    &.rss a:before {
+      content: 'r';
+    }
+    &.plus a:before {
+      content: 'g';
+    }
+  }
+}
+.blog-post {
+  @extend %col-4;
+  margin-bottom: 20px;
+}
+
+
+.primary-post,
+.blog-post {
+  > div {
+    position: relative;
+  }
+  img {
+    width: 100%;
+    min-height: 100px;
+  }
+  h2, h3 {
+    color: #2f2116;
+    width: 100%;
+  }
+  h2 {
+    background-color:rgba(255,255,255,0.5);
+    bottom: 26px;
+    position: absolute;
+  }
+  p {
+    margin: 0;
+  }
+  h2, h3, p, .readmore {
+    padding: 4px 10px;
+  }
+  .readmore {
+    float: right;
+  }
+}
+.primary-post {
+  @include col(11);
+  img {
+    min-height: 150px;
+  }
+  h2, h3 {
+    background-color:rgba(255,255,255,0.5);
+  }
+  h2 {
+    bottom: 29px;
+    top: auto;
+  }
+  h3 {
+    bottom: 3px;
+    position: absolute;
+  }
+  a {
+    padding-left: 2px;
+  }
+}
+
+.contact {
+  @include col(2, 10);
+}
+@media only screen and (max-width: $wi-stacked-breakpoint ) {
+}
+@media only screen and (max-width: $wi-fluid-start) and (min-width: $wi-fluid-end) {
+}

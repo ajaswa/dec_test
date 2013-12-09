@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'socialicoregular';
+  src: url(asset-path('socialico-webfont.eot', image));
+  src: url(asset-path('socialico-webfont.eot?#iefix', image)) format('embedded-opentype'),
+       url(asset-path('socialico-webfont.woff', image)) format('woff'),
+       url(asset-path('socialico-webfont.ttf', image)) format('truetype'),
+       url(asset-path('socialico-webfont.svg#socialicoregular', image)) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
