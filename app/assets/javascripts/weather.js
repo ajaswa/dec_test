@@ -30,7 +30,7 @@ Weather.prototype._location = function(){
       ipGeoUrl = 'http://freegeoip.net/json/',
       locationUrl = 'http://api.wunderground.com/api/bef7ea6353dc412b/geolookup/q/';
 
-  if ("geolocationsdf" in navigator) {
+  if ("geolocation" in navigator) {
 
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude,
@@ -45,7 +45,7 @@ Weather.prototype._location = function(){
     });
 
   } else {
-    console.log('else');
+
     $.ajax({
       url: ipGeoUrl,
       dataType: 'jsonp'
