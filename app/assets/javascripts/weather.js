@@ -30,7 +30,7 @@ Weather.prototype._location = function(){
       ipGeoUrl = 'http://freegeoip.net/json/',
       locationUrl = 'http://api.wunderground.com/api/bef7ea6353dc412b/geolookup/q/';
 
-  if ("geolocation" in navigator) {
+  if ("geolocationsdf" in navigator) {
 
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude,
