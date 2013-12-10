@@ -45,7 +45,7 @@ Weather.prototype._location = function(){
     });
 
   } else {
-
+    console.log('else');
     $.ajax({
       url: ipGeoUrl,
       dataType: 'jsonp'
