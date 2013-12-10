@@ -47,7 +47,7 @@ Weather.prototype._location = function(){
   } else {
 
     $.ajax({
-      url: ipGeoUrl+ipAddress,
+      url: ipGeoUrl,
       dataType: 'jsonp'
     }).done(function( data ) {
       that._get(data.region_name, data.city);
