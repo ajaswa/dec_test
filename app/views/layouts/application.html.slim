@@ -22,6 +22,7 @@ html
           a href="#" Tags
         li
           a href="#" About Us
+      #sun
 
 
     = yield
@@ -29,4 +30,6 @@ html
       .contact
         h4 Lorem Ipsum Brewery, llc
         a href="#" info@example.com
-        
+
+    javascript:
+      var ipAddress = '#{request.remote_ip}';
